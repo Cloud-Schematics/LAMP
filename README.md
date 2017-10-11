@@ -1,14 +1,14 @@
 # LAMP Template
 
-This template allocates a virtual machine instance and provisions Apache, MySQL (mariadb), and PHP onto that instance. 
+This template deploys a virtual machine instance and provisions Apache, MySQL (mariadb), and PHP onto that instance. 
 
 ## Using This Template
 
-In Schematics create variables `softlayer_username`, `softlayer_api_key`, `public_key`, `temp_public_key`, and `temp_private_key`.
+In Schematics, add the following variables: `public_key`, `temp_public_key`, and `temp_private_key`.
 
-Set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` to use the Schematics generated keypair for the environment. Set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE` to use the Schematics generated keypair for the environment. 
+To use the Schematics-generated keypair for the environment, set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` and set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE`. 
 
-If you want to be able to SSH into the virtual machine provide a value for `public_key`
+If you want to be able to use an SSH key to access the virtual machine, provide your public SSH key as the value for `public_key`.
 
 ## Variables
 
