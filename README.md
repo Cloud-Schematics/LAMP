@@ -1,30 +1,40 @@
 # LAMP Template
 
-This template allocates a virtual machine instance and provisions Apache, MySQL (mariadb), and PHP onto that instance. 
+An IBM Cloud Schematics template to provision a virtual machine instance and provision Apache, MySQL (mariadb), and PHP onto that instance. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure as code engine. With this template, you can provision and manage infrastructure as a single unit.
 
-## Using This Template
+See the Bluemix docs for more information about [Schematics](https://console.bluemix.net/docs/services/schematics/index.html) and the [IBM Bluemix Container Service](https://console.bluemix.net/docs/containers/container_index.html).
 
-In Schematics create variables `softlayer_username`, `softlayer_api_key`, `public_key`, `temp_public_key`, and `temp_private_key`.
+## Create an environment with this template
 
-Set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` to use the Schematics generated keypair for the environment. Set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE` to use the Schematics generated keypair for the environment. 
+Environments can be used to separate software components into development tiers (e.g. staging, QA, and production).
 
-If you want to be able to SSH into the virtual machine provide a value for `public_key`
+1. In Bluemix, go to the menu and select the [Schematics dashboard](https://console.bluemix.net/schematics).
+2. In the left navigation menu, select Templates to access the template catalog.
+3. Click Create on the containers cluster template. You are taken to a configuration page where you can define data about your environment.
+4. Add the following variables: `public_key`, `temp_public_key`, and `temp_private_key`.
+5. To use the Schematics-generated keypair for the environment, set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` and set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE.
+6. If you want to be able to use an SSH key to access the virtual machine, provide your public SSH key as the value for `public_key`.
+7. Define values for your remaining variables according to the following table.
 
-## Variables
+### Variables
 
 |Variable Name|Description|Default Value|
 |-------------|-----------|-------------|
-|hostname     |           |hostname|
-|domain       |           |domain.dev|
-|datacenter   |           |wdc01|
-|os_reference_code||CENTOS_7|
-|cores|CPU cores|1|
-|memory||1026|
-|disk_size|in GB|25|
-|private_network_only||false|
-|network_speed||100|
-|tags|||
-|ssh_user|provisioning username|root|
-|ssh_label||public ssh key - Schematics VM|
-|ssh_notes|||
-|public_key|your public SSH key to use for access to virtual machine||
+|cores|The number of CPU cores to allocate.|1|
+|datacenter|The data center to create resources in. You can get the list by running `bluemix cs locations`.|wdc01|
+|disk_size|The numeric disk sizes (in GB) for the instance’s block device and disk image settings.|25|
+|domain|The domain for the instance.|domain.dev|
+|hostname|The hostname for the instance.|hostname|
+|memory|The amount of memory, expressed in megabytes, to allocate.|1026|
+|network_speed|The connection speed (in Mbps) for the instance’s network components.|100|
+|os_reference_code|The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [Bluemix Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode).|CENTOS_7|
+|private_network_only|When set to true, a compute instance only has access to the private network.|false|
+|public_key|Your public SSH key to access the virtual machine.||
+|ssh_label|An identifying label to assign to the SSH key.|public ssh key - Schematics VM|
+|ssh_notes|A description to assign to the SSH key.||
+|ssh_user|The provisioning username.|root|
+|tags|Descriptive tags to label the resource.||
+
+##Next steps
+
+After setting up your environment with this template, you can run **Plan** to preview how Schematics will deploy resources (in this case, a Kubernetes cluster) to your environment. When you are ready to deploy the cluster, run **Apply**.
