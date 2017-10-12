@@ -35,6 +35,6 @@ Environments can be used to separate software components into development tiers 
 |ssh_user|The provisioning username.|root|
 |tags|Descriptive tags to label the resource.||
 
-##Next steps
+## Next steps
 
 After setting up your environment with this template, you can run **Plan** to preview how Schematics will deploy resources (in this case, a Kubernetes cluster) to your environment. When you are ready to deploy the cluster, run **Apply**.
