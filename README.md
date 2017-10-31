@@ -11,10 +11,9 @@ Environments can be used to separate software components into development tiers 
 1. In Bluemix, go to the menu and select the [Schematics dashboard](https://console.bluemix.net/schematics).
 2. In the left navigation menu, select **Templates** to access the template catalog.
 3. Click **Create** on the containers cluster template. You are taken to a configuration page where you can define data about your environment.
-4. Add the following variables: `public_key`, `temp_public_key`, and `temp_private_key`.
-5. To use the Schematics-generated keypair for the environment, set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` and set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE.
-6. If you want to be able to use an SSH key to access the virtual machine, provide your public SSH key as the value for `public_key`.
-7. Define values for your remaining variables according to the following table.
+4. To use the Schematics-generated keypair for the environment, add the following variables: `temp_public_key` and `temp_private_key`. Set `temp_public_key` to `$SCHEMATICS.SSHKEYPUBLIC` and set `temp_private_key` to `$SCHEMATICS.SSHKEYPRIVATE.
+5. If you want to be able to use an SSH key to access the virtual machine, provide your public SSH key as the value for `ssh_key`.
+6. Define values for your remaining variables according to the following table.
 
 ### Variables
 
@@ -29,7 +28,9 @@ Environments can be used to separate software components into development tiers 
 |network_speed|The connection speed (in Mbps) for the instance’s network components.|100|
 |os_reference_code|The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [Bluemix Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode).|CENTOS_7|
 |private_network_only|When set to true, a compute instance only has access to the private network.|false|
-|public_key|Your public SSH key to access the virtual machine.||
+|softlayer_api_key|Your Bluemix Infrastructure (SoftLayer) API key.||
+|softlayer_username|Your Bluemix Infrastructure (SoftLayer) user name.||
+|ssh_key|Your public SSH key to access the VM.||
 |ssh_label|An identifying label to assign to the SSH key.|public ssh key - Schematics VM|
 |ssh_notes|A description to assign to the SSH key.||
 |ssh_user|The provisioning username.|root|
