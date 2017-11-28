@@ -1,6 +1,6 @@
 # LAMP Template
 
-An IBM Cloud Schematics template to provision a virtual machine instance and provision Apache, MySQL (mariadb), and PHP onto that instance. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure as code engine. With this template, you can provision and manage infrastructure as a single unit. **Note**: To create the resources that this template requests, your IBM Cloud Infrastructure (Softlayer) and IBM Cloud account must have sufficient permissions.
+An IBM Cloud Schematics template to provision a virtual machine instance and provision Apache, MySQL (mariadb), and PHP onto that instance. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure as code engine. With this template, you can provision and manage infrastructure as a single unit. **Note**: To create the resources that this template requests, your [IBM Cloud Infrastructure (Softlayer) account](https://console.bluemix.net/docs/iam/mnginfra.html#managing-infrastructure-access) and [IBM Cloud account](https://console.bluemix.net/docs/iam/mngiam.html#iammanidaccser) must have sufficient permissions. 
 
 See the IBM Cloud docs for more information about [Schematics](https://console.bluemix.net/docs/services/schematics/index.html) and the [IBM Cloud Container Service](https://console.bluemix.net/docs/containers/container_index.html).
 
