@@ -13,7 +13,7 @@
 #
 ################################################################
 variable "hostname" {
-  default = "hostname"
+  default = "lamp"
   description = "The hostname for the instance."
 }
 variable "domain" {
@@ -25,7 +25,7 @@ variable "datacenter" {
   description = "The data center to create resources in."
 }
 variable "os_reference_code" {
-  default = "CENTOS_7"
+  default = "CENTOS_LATEST_64"
   description = "The operating system reference code used to provision the computing instance."
 }
 variable "cores" {
@@ -49,7 +49,7 @@ variable "network_speed" {
   description = "The connection speed (in Mbps) for the instance’s network components."
 }
 variable "tags" {
-  default = ""
+  default = "lamp"
   description = "Descriptive tags to label the resource."
 }
 
@@ -58,7 +58,7 @@ variable "ssh_user" {
   description = "The default username for the VM."
 }
 variable "ssh_label" {
-  default = "public ssh key - Schematics VM"
+  default = "public ssh key"
   description = "An identifying label to assign to the SSH key."
 }
 variable "ssh_notes" {
