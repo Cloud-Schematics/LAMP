@@ -12,7 +12,7 @@ This sample uses chargable services and you are charged for the time the service
 
 The user must have Identity and Access Management (IAM) access to create and configure an IBM Cloud database instance and VSIs.
 
-### IAM access
+## Configuring your deployment values
 
 The following variables need to be set before using the template: 
 
