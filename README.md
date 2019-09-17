@@ -2,7 +2,7 @@
 
 The LAMP template is an IBM Cloud Schematics template that is used to create a virtual server instance (VSI) and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
 
-For more information about how to use the template, go to the documentation for [IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics).
+For more information about how to use the template, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics).
 
 ## Costs
 
@@ -14,10 +14,10 @@ The user must have Identity and Access Management (IAM) access to create and con
 
 ## Configuring your deployment values
 
-The following variables need to be set before you can use the template: 
+Set the following variables before you use the template:
 
 * `softlayer_username` is a the infrastructure user name. Go to **Access (IAM) > Users**, and select your name. Then, verify the user name is listed in the VPN password section.
-* `softlayer_api_key` is a classic infrastructure API key. Go to **Access (IAM) > Users**, and select your name. Then, verify that a classic infrastructure API key is included in the API keys section. If you don't have one already, you can create one from theh [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys).
+* `softlayer_api_key` is a classic infrastructure API key. Go to **Access (IAM) > Users**, and select your name. Then, verify that a classic infrastructure API key is included in the API keys section. If you don't have one already, you can create one from the [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys).
 
 You must also set the following deployment values on the Create page. You can enter customized values or accept the defaults.
 
@@ -38,7 +38,7 @@ You must also set the following deployment values on the Create page. You can en
 |ssh_label|An identifying label to assign to the SSH key.|public ssh key - Schematics VM|
 |ssh_notes|A description to assign to the SSH key.||
 |ssh_user|The default user name for the virtual machine, for example, the "root" user for UNIX operating systems. |root|
-|tags|Add descriptive tags to label the resource.  A tag is a label that you assign to a resource for easy filtering of resources in your resource list.||
+|tags|Add descriptive tags to label the resource. A tag is a label that you assign to a resource for easy filtering of resources in your resource list.||
 ## Outputs
 
 This template outputs the IPv4 address of the created virtual machine.
