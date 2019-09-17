@@ -14,19 +14,19 @@
 ################################################################
 variable "hostname" {
   default = "lamp"
-  description = "The hostname for the instance. For example: vm1"
+  description = "The hostname for the instance, for example, vm1."
 }
 variable "domain" {
   default = "domain.dev"
-  description = "The domain for the instance. For example: domain.dev"
+  description = "The domain for the instance, for example, domain.dev."
 }
 variable "datacenter" {
   default = "wdc01"
-  description = "The data center to create resources in, for example, dal13. To get a list of all data centers, run the "ic sl vs options" command."
+  description = "The data center to create resources in, for example, dal13. To get a list of all data centers, run the `ic sl vs options` command."
 }
 variable "os_reference_code" {
   default = "CENTOS_LATEST_64"
-  description = "The code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode)."
+  description = "The code that is used to provision the computing instance. To view the available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode)."
 }
 variable "cores" {
   default = "1"
@@ -55,7 +55,7 @@ variable "tags" {
 
 variable "ssh_user" {
   default = "root"
-  description = "The default user name for the virtual machine. For example, the "root" user for UNIX operating systems."
+  description = "The default user name for the virtual machine, for example, the "root" user for UNIX operating systems."
 }
 variable "ssh_label" {
   default = "public ssh key"
@@ -67,7 +67,7 @@ variable "ssh_notes" {
 }
 variable "ssh_key" {
   default = ""
-  description = "Your public SSH key to access the virtual machine. Your public key is saved to a file called id_rsa.pub in the .ssh subdirectory of your home directory."
+  description = "Your public SSH key to access the virtual machine. Your public key is saved to a file called `id_rsa.pub` in the `.ssh` subdirectory of your home directory."
 }
 
 resource "ibm_compute_ssh_key" "ssh_key" {
