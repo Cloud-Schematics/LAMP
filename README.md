@@ -14,14 +14,12 @@ The user must have Identity and Access Management (IAM) access to create and con
 
 ## Configuring your deployment values
 
-The following variables need to be set before using the template: 
+The following variables need to be set before you can use the template: 
 
 * `softlayer_username` is a the infrastructure user name. Go to https://cloud.ibm.com/iam/users/, select your name, then verify the user name is listed in the VPN password section.
 * `softlayer_api_key` is a classic infrastructure API key. Go to https://cloud.ibm.com/iam/users/, select your name, then verify that a classic infrastructure API key is already created in the API keys section. If you don't have one already, go to https://cloud.ibm.com/iam/#/apikeys and create one.
 
-### Deployment values
-
-The following deployment values must be set. You can enter customized values or accept the default values.
+You must also set the following deployment values on the Create page. You can enter customized values or accept the defaults.
 
 |Value Name|Description|Default Value|
 |-------------|-----------|-------------|
