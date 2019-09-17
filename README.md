@@ -21,7 +21,7 @@ The following variables need to be set before you can use the template:
 
 You must also set the following deployment values on the Create page. You can enter customized values or accept the defaults.
 
-|Value Name|Description|Default Value|
+|Variable Name|Description|Default Value|
 |-------------|-----------|-------------|
 |cores|The number of CPU cores to allocate.|1|
 |datacenter|The data center to create resources in, for example dal13. To get a list of all data centers, run the `ic sl vs options` command.|wdc01|
