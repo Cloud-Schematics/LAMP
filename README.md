@@ -1,12 +1,12 @@
 # LAMP template
 
-The LAMP template is an IBM Cloud Schematics template used to create a virtual machine instance and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
+The LAMP template is an IBM Cloud Schematics template that is used to create a virtual machine instance and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
 
 For more information, go to the documentation for [IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics).
 
 ## Costs
 
-This sample uses chargable services and you are charged for the time the services are deployed. The use of `terraform destroy` results in deletion of all resources including the IBM Cloud database service instance. Billing for virtual server instances (VSIs) and IBM Cloud database terminates on the hour. 
+This sample uses chargeable services and you are charged for the time the services are deployed. The use of `terraform destroy` results in deletion of all resources including the IBM Cloud database service instance. Billing for virtual server instances (VSIs) and IBM Cloud database terminates on the hour. 
 
 ## Dependencies
 
@@ -16,7 +16,7 @@ The user must have Identity and Access Management (IAM) access to create and con
 
 The following variables need to be set before you can use the template: 
 
-* `softlayer_username` is a the infrastructure user name. Go to https://cloud.ibm.com/iam/users/, select your name, then verify the user name is listed in the VPN password section.
+* `softlayer_username` is the infrastructure user name. Go to https://cloud.ibm.com/iam/users/, select your name, then verify that the user name is listed in the VPN password section.
 * `softlayer_api_key` is a classic infrastructure API key. Go to https://cloud.ibm.com/iam/users/, select your name, then verify that a classic infrastructure API key is already created in the API keys section. If you don't have one already, go to https://cloud.ibm.com/iam/#/apikeys and create one.
 
 You must also set the following deployment values on the Create page. You can enter customized values or accept the defaults.
