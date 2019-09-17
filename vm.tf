@@ -26,7 +26,7 @@ variable "datacenter" {
 }
 variable "os_reference_code" {
   default = "CENTOS_LATEST_64"
-  description = "The operating system reference code used to provision the computing instance. For example: CENTOS_7_64"
+  description = "The code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode)."
 }
 variable "cores" {
   default = "1"
