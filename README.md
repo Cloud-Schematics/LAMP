@@ -10,18 +10,20 @@ This sample uses chargable services and you are charged for the time the service
 
 ## Dependencies
 
-The user must have IAM access to create and configure an IBM Cloud database instance and VSIs.
+The user must have Identity and Access Management (IAM) access to create and configure an IBM Cloud database instance and VSIs.
 
-## Identity &amp; Access Management (IAM) access
+### IAM access
 
 The following variables need to be set before using the template: 
 
 * `softlayer_username` is a the infrastructure user name. Go to https://cloud.ibm.com/iam/users/, select your name, then verify the user name is listed in the VPN password section.
 * `softlayer_api_key` is a classic infrastructure API key. Go to https://cloud.ibm.com/iam/users/, select your name, then verify that a classic infrastructure API key is already created in the API keys section. If you don't have one already, go to https://cloud.ibm.com/iam/#/apikeys and create one.
 
-## Variables
+### Deployment values
 
-|Variable Name|Description|Default Value|
+The following deployment values must be set. You can enter customized values or accept the default values.
+
+|Value Name|Description|Default Value|
 |-------------|-----------|-------------|
 |cores|The number of CPU cores to allocate.|1|
 |datacenter|The data center to create resources in, for example dal13. To get a list of all data centers, run the `ic sl vs options` command.|wdc01|
