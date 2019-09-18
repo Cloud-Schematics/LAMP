@@ -1,8 +1,8 @@
 variable "softlayer_username" {
-  description = "Your IBM Cloud Infrastructure (SoftLayer) user name."
+  description = "Enter your classic infrastructure user name. Go to **Access (IAM)** > **Users**, and select your name. Then, find your user name in the VPN password section"
 }
 variable "softlayer_api_key" {
-  description = "Your IBM Cloud Infrastructure (SoftLayer) API key."
+  description = "Enter your classic infrastructure API key. Go to the [IBM Cloud API keys page] (https://cloud.ibm.com/iam/apikeys) to get the details of an existing API key or to create a new one."
 }
 
 provider "ibm" {
