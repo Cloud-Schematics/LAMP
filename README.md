@@ -1,12 +1,12 @@
 # LAMP template
 
-The LAMP template is an IBM Cloud Schematics template that is used to create a virtual server instance (VSI) and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
+The LAMP template is an IBM Cloud Schematics template that is used to create a virtual machine instance and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
 
 For more information about how to use the template, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics).
 
 ## Costs
 
-This sample uses chargeable services and you are charged for the time the services are deployed. Running the `terraform destroy` command deletes all resources, including the IBM Cloud database service instance. Billing for virtual server instances (VSIs) and IBM Cloud database terminates on the hour. 
+This sample uses chargeable services and you are charged for the time the services are deployed. Running the `terraform destroy` command deletes all resources, including the IBM Cloud database service instance. Billing for virtual server instances and IBM Cloud database terminates on the hour. 
 
 ## Dependencies
 
