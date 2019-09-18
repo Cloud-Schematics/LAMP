@@ -14,10 +14,10 @@ The user must have Identity and Access Management (IAM) access to create and con
 
 ## Configuring your deployment values
 
-Set the following variables before you use the template:
+Export the following variables before you use the template:
 
-* `softlayer_username` is a the infrastructure user name. Go to **Access (IAM) > Users**, and select your name. Then, verify the user name is listed in the VPN password section.
-* `softlayer_api_key` is a classic infrastructure API key. Go to **Access (IAM) > Users**, and select your name. Then, verify that a classic infrastructure API key is included in the API keys section. If you don't have one already, you can create one from the [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys).
+* `SL_USERNAME` is a the infrastructure user name. Go to **Access (IAM) > Users**, and select your name. Then, verify the user name is listed in the VPN password section.
+* `SL_API_KEY` is a classic infrastructure API key. Go to **Access (IAM) > Users**, and select your name. Then, verify that a classic infrastructure API key is included in the API keys section. If you don't have one already, you can create one from the [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys).
 
 You must also set the following deployment values on the Create page. You can enter customized values or accept the defaults.
 
@@ -32,8 +32,6 @@ You must also set the following deployment values on the Create page. You can en
 |network_speed|The connection speed in Mbps for the instance’s network components.|100|
 |os_reference_code|The code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode).|CENTOS_LATEST_64|
 |private_network_only|Enter true or false. True means a compute instance has access only to the private network.|false|
-|softlayer_api_key|Enter your classic infrastructure API key. See the [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys) to get the details of an existing API key or to create a new one.||
-|softlayer_username|Enter your classic infrastructure user name. Go to **Access (IAM) > Users**, and select your name. Then, locate your user name from the VPN password section. ||
 |ssh_key|Your public SSH key to access the virtual machine. Your public key is saved to a `id_rsa.pub` file in the `.ssh` subdirectory of your home directory.||
 |ssh_label|An identifying label to assign to the SSH key.|public ssh key - Schematics VM|
 |ssh_notes|A description to assign to the SSH key.||
