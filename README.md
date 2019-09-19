@@ -1,16 +1,31 @@
-# LAMP template
+# LAMP
 
-The LAMP template is an IBM Cloud Schematics template that is used to create a virtual machine instance and configure it with the "LAMP" stack: Linux, Apache, MySQL (mariadb), and PHP. Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure-as-code engine. With this template, you can create and manage infrastructure as a single unit.
+Use this template to provision a classic virtual server instance (VSI) in IBM Cloud by using Terraform or IBM Cloud Schematics, and configure the instance with the components of the LAMP stack: 
+- Linux
+- Apache
+- Compose for MySQL2
+- PHP
 
-For more information about how to use the template, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics).
+To apply the LAMP template in IBM Cloud with IBM Cloud Schematics, you must create a Schematics workspace that points to this GitHub repository. For more information, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics?topic=schematics-workspace-setup#create-workspace).
+
+For more information about classic virtual service instances, see [Getting started with virtual servers](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-getting-started-tutorial). 
 
 ## Costs
 
-This sample uses chargeable services and you are charged for the time the services are deployed. Running the `terraform destroy` command deletes all resources, including the IBM Cloud database service instance. Billing for virtual server instances and IBM Cloud database terminates on the hour. 
+When you apply this template, charges for the following resources occur for the time you use these resources: 
+- **Classic virtual server instance**: You configure your virtual server instance in the `vm.tf` Terraform configuration file. The price for your instance depends on your instance configuration. Make sure to review available [plans](https://www.ibm.com/cloud/virtual-servers/calculator/) before you apply this template in IBM Cloud. By default, your instance is provisioned with an hourly billing. 
+- **Compose for MySQL2**: Hourly charges for your IBM Cloud database service depend on the amount of data (GB) that you want to store. Make sure to review available [plans](https://cloud.ibm.com/catalog/services/compose-for-mysql) before you start storing data in your database service instance. 
+
+**Note**: You can remove your virtual server instance and the LAMP stack by [deleting your Schematics workspace or your instance](https://cloud.ibm.com/docs/schematics?topic=schematics-manage-lifecycle#destroy-resources) with IBM Cloud Schematics. Removing the workspace or the instance cannot be undone. Make sure that you back up any data that you must keep before you start the deletion process. 
 
 ## Dependencies
 
-The user must have Identity and Access Management (IAM) access to create and configure an IBM Cloud database instance and VSIs.
+Before you can apply the template in IBM Cloud, you must have the following permissions in IBM Cloud Identity and Access Management: 
+- **Manager** service access role for IBM Cloud Schematics
+- **Add Server** and **Cancel Server** classic infrastructure permissions that you can find in the **Account** permission set
+- All permissions that are included in the **Devices** classic infrastructure permission set
+- **Add Compute with Public Network Port** classic infrastructure permission that you can find in the **Network** permission set
+- 
 
 ## Configuring your deployment values
 
