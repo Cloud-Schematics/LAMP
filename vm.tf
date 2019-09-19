@@ -30,7 +30,7 @@ variable "os_reference_code" {
 }
 variable "cores" {
   default = "1"
-  description = "Enter the number of CPU cores that you want to allocate to your classic infrastructure virtual server instance. For supported core, run `ibmcloud sl vs options` and review the values in the 'cpu (standard)' field."
+  description = "Enter the number of CPU cores that you want to allocate to your classic infrastructure virtual server instance. For supported cores, run `ibmcloud sl vs options` and review the values in the 'cpu (standard)' field."
 }
 variable "memory" {
   default = "1024"
@@ -46,28 +46,27 @@ variable "private_network_only" {
 }
 variable "network_speed" {
   default = "100"
-  description = "The connection speed in Mbps for the instance’s network components."
+  description = "Enter the network speed in Mbps for your classic infrastructure virtual server instance. To find available network speeds, run `ibmcloud sl vs options` and review the values in the 'nic' field."
 }
 variable "tags" {
   default = "lamp"
-  description = "Add descriptive tags to label the resource.  A tag is a label that you assign to a resource for easy filtering of resources in your resource list."
+  description = "Enter descriptive tags that you want to add to your virtual server instance. Labels can help find your resource more easily after it is created in IBM Cloud."
 }
-
 variable "ssh_user" {
   default = "root"
-  description = "The default user name for the virtual machine, for example, the "root" user for UNIX operating systems."
+  description = "Enter the default user name that you want to use to log in to the virtual server instance."
 }
 variable "ssh_label" {
   default = "public ssh key"
-  description = "An identifying label to assign to the SSH key."
+  description = "Enter a label that you want to assign to your SSH key."
 }
 variable "ssh_notes" {
   default = ""
-  description = "A description to assign to the SSH key."
+  description = "Enter a short description that you want to add to your SSH key."
 }
 variable "ssh_key" {
   default = ""
-  description = "Your public SSH key to access the virtual machine. Your public key is saved to a file called `id_rsa.pub` in the `.ssh` subdirectory of your home directory."
+  description = "Enter a public SSH key that you use to access your classic infrastructure virtual server instance. For more information about adding an SSH key in IBM Cloud, see [Adding an SSH key](https://cloud.ibm.com/docs/infrastructure/ssh-keys?topic=ssh-keys-adding-an-ssh-key)."
 }
 
 resource "ibm_compute_ssh_key" "ssh_key" {
