@@ -14,35 +14,35 @@
 ################################################################
 variable "hostname" {
   default = "lamp"
-  description = "The hostname for the instance, for example, vm1."
+  description = "Enter a host name for your classic infrastructure virtual server instance. This host name is used with the `domain` to create the full URL for your classic infrastructure virtual server instance."
 }
 variable "domain" {
   default = "domain.dev"
-  description = "The domain for the instance, for example, domain.dev."
+  description = "Enter the domain name that you want to assign to your classic infrastructure virtual server instance. This domain name is used with the `hostname` to create the full URL for your classic infrastructure virtual server instance."
 }
 variable "datacenter" {
   default = "wdc01"
-  description = "The data center to create resources in, for example, dal13. To get a list of all data centers, run the `ic sl vs options` command."
+  description = "Enter the data center where you want to provision your classic infrastructure virtual server instance. For available data centers, run `ibmcloud sl vs options` and review the values in the 'datacenter' field."
 }
 variable "os_reference_code" {
   default = "CENTOS_LATEST_64"
-  description = "The code that is used to provision the computing instance. To view the available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode)."
+  description = "Enter the reference code of the operating system that you want to install on your virtual server instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode)."
 }
 variable "cores" {
   default = "1"
-  description = "The number of CPU cores to allocate."
+  description = "Enter the number of CPU cores that you want to allocate to your classic infrastructure virtual server instance. For supported core, run `ibmcloud sl vs options` and review the values in the 'cpu (standard)' field."
 }
 variable "memory" {
   default = "1024"
-  description = "The amount of memory in MB to allocate."
+  description = "Enter the amount of memory in megabytes that you want to allocate to your classic infrastructure virtual server instance. To find available memory sizes, run `ibmcloud sl vs options` and review the values in the 'memory' field. "
 }
 variable "disk_size" {
   default = "25"
-  description = "The numeric disk sizes in GB for the instance’s block device and disk image settings."
+  description = "Enter the numeric disk sizes in GB for the instance’s block device and disk image settings. To view available disk sizes, run `ibmcloud sl vs options` and review the values in the 'san disk (0)' field. "
 }
 variable "private_network_only" {
   default = "false"
-  description = "Enter true or false. True means a compute instance has access only to the private network."
+  description = "Decide if you want to connect your classic infrastructure virtual server instance to a private VLAN only. Enter `true` to connect it to a private VLAN only, and `false` to connect it to a public and a private VLAN."
 }
 variable "network_speed" {
   default = "100"
