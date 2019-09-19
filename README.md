@@ -52,5 +52,5 @@ You can also choose to customize the default settings for your classic infrastru
 
 ## Outputs
 
-This template outputs the IPv4 address of the created virtual machine.
+When you apply the template and your LAMP resource is successfully provisioned in IBM CLoud, you see the public IP address that is assigned to your virtual server instance in your Schematics log files. You can use the IP address to access your instance from the internet. 
 
