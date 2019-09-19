@@ -6,7 +6,7 @@ Use this template to provision a classic virtual server instance (VSI) in IBM Cl
 - MySQL (mariadb)
 - PHP
 
-To apply the LAMP template in IBM Cloud with IBM Cloud Schematics, you must select the template from the [IBM Cloud catalog](cloud.ibm.com/catalog/content/LAMP), enter the configuration for your classic virtual server instance, and install the template. When you install the template, IBM Cloud Schematics creates a workspace that points to this GitHub repository and starts provisioning your resources by using Terraform. You can review logs and your resources from the IBM Cloud Schematics console. For more information, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics). 
+To apply the LAMP template in IBM Cloud with IBM Cloud Schematics, you must select the template from the [IBM Cloud catalog](cloud.ibm.com/catalog/content/LAMP), enter the configuration for your classic virtual server instance, and install the template. When you install the template, IBM Cloud Schematics creates a workspace and starts provisioning your resources by using Terraform. You can review logs and your resources from the IBM Cloud Schematics console. For more information, see the [IBM Cloud Schematics documentation](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics). 
 
 For more information about IBM Cloud classic virtual service instances, see [Getting started with virtual servers](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-getting-started-tutorial). 
 
@@ -26,40 +26,30 @@ Before you can apply the template in IBM Cloud, you must have the following perm
 
 ## Configuring your deployment values
 
-
-
-Set the following variables before you use the template:
-
-### Required values
-
 When you select the LAMP template from the IBM Cloud catalog, you must enter the following values before you can apply the template: 
 
 * `softlayer_api_key`: Enter the API key to access IBM Cloud classic infrastructure. For more information for how to create an API key and retrieve it, see [Managing classic infrastructure API keys](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys). 
 * `softlayer_username`: Enter the user name to access IBM Cloud classic infrastructure. You can retrieve the user name by following the instructions for retrieving your classic infrastructure API key. 
 * `ssh_key`: Enter a public SSH key that you use to access your classic infrastructure virtual server instance. For more information about adding an SSH key and uploading the key to IBM Cloud, see [Adding an SSH key](https://cloud.ibm.com/docs/infrastructure/ssh-keys?topic=ssh-keys-adding-an-ssh-key). 
 
-### Optional values
-
-Before you apply the template in IBM Cloud, you can choose to customize the following default values: 
+You can also choose to customize the default settings for your classic infrastructure virtual server instance: 
 
 |Variable Name|Description|Default Value|
 |-------------|-----------|-------------|
-|cores|The number of CPU cores to allocate.|1|
-|datacenter|The data center to create resources in, for example, dal13. To get a list of all data centers, run the `ic sl vs options` command.|wdc01|
-|disk_size|The numeric disk sizes in GB for the instance’s block device and disk image settings.|25|
-|domain|The domain for the instance, for example, domain.dev|domain.dev|
-|hostname|The hostname for the instance, for example, vm1|lamp|
-|memory|The amount of memory in MB to allocate.|1026|
-|network_speed|The connection speed in Mbps for the instance’s network components.|100|
-|os_reference_code|The code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode).|CENTOS_LATEST_64|
-|private_network_only|Enter true or false. True means a compute instance has access only to the private network.|false|
-|softlayer_api_key|Enter your classic infrastructure API key. See the [IBM Cloud API keys page](https://cloud.ibm.com/iam/apikeys) to get the details of an existing API key or to create a new one.||
-|softlayer_username|Enter your classic infrastructure user name. Go to **Access (IAM) > Users**, and select your name. Then, locate your user name from the VPN password section. ||
-|ssh_key|Your public SSH key to access the virtual machine. Your public key is saved to a `id_rsa.pub` file in the `.ssh` subdirectory of your home directory.||
-|ssh_label|An identifying label to assign to the SSH key.|public ssh key - Schematics VM|
-|ssh_notes|A description to assign to the SSH key.||
-|ssh_user|The default user name for the virtual machine, for example, the "root" user for UNIX operating systems. |root|
-|tags|Add descriptive tags to label the resource. A tag is a label that you assign to a resource for easy filtering of resources in your resource list.||
+|cores|Enter the number of CPU cores that you want to allocate to your classic infrastructure virtual server instance. For supported core, run `ibmcloud sl vs options` and review the values in the **cpu (standard)** field.|1|
+|datacenter|Enter the data center where you want to provision your classic infrastructure virtual server instance. For available data centers, run `ibmcloud sl vs options` and review the values in the **datacenter** field.|wdc01|
+|disk_size|	Enter the numeric disk sizes in GB for the instance’s block device and disk image settings. To view available disk sizes, run `ibmcloud sl vs options` and review the values in the **san disk (0)** field. |25|
+|domain|Enter the domain name that you want to assign to your classic infrastructure virtual server instance. This domain name is used with the `hostname` to create the full URL for your classic infrastructure virtual server instance.|domain.dev|
+|hostname|Enter a host name for your classic infrastructure virtual server instance. This host name is used with the `domain` to create the full URL for your classic infrastructure virtual server instance.|lamp|
+|memory|Enter the amount of memory in megabytes that you want to allocate to your classic infrastructure virtual server instance. To find available memory sizes, run `ibmcloud sl vs options` and review the values in the **memory** field. |1026|
+|network_speed|Enter the network speed in Mbps for your classic infrastructure virtual server instance. To find available network speeds, run `ibmcloud sl vs options` and review the values in the **nic** field. |100|
+|os_reference_code|Enter the reference code of the operating system that you want to install on your virtual server instance. To see available OS reference codes, log in to the [IBM Cloud Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode).|CENTOS_LATEST_64|
+|private_network_only|Decide if you want to connect your classic infrastructure virtual server instance to a private VLAN only. Enter `true` to connect it to a private VLAN only, and `false` to connect it to a public and a private VLAN. |false|
+|ssh_label|Enter a label that you want to assign to your SSH key.|public ssh key - Schematics VM|
+|ssh_notes|Enter a short description that you want to add to your SSH key. ||
+|ssh_user|Enter the default user name that you want to use to log in to the virtual server instance. |root|
+|tags|Enter descriptive tags that you want to add to your virtual server instance. Labels can help find your resource more easily after it is created in IBM Cloud. ||
+
 ## Outputs
 
 This template outputs the IPv4 address of the created virtual machine.
