@@ -67,7 +67,6 @@ variable "ssh_notes" {
 variable "ssh_key" {
   default = ""
   description = "Enter a public SSH key that you use to access your classic infrastructure virtual server instance. For more information about adding an SSH key in IBM Cloud, see [Adding an SSH key](https://cloud.ibm.com/docs/infrastructure/ssh-keys?topic=ssh-keys-adding-an-ssh-key)."
-  sensitive = true
 }
 
 resource "ibm_compute_ssh_key" "ssh_key" {
