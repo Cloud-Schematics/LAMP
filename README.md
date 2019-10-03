@@ -28,6 +28,8 @@ Before you can apply the template in IBM Cloud, you must have the following perm
 
 When you select the LAMP template from the IBM Cloud catalog, you must enter the following values before you can apply the template:
 
+* `softlayer_api_key`: Enter the API key to access IBM Cloud classic infrastructure. For more information for how to create an API key and retrieve it, see [Managing classic infrastructure API keys](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys).
+* `softlayer_username`: Enter the user name to access IBM Cloud classic infrastructure. You can retrieve the user name by following the instructions for retrieving your classic infrastructure API key.
 * `ssh_key`: Enter a public SSH key that you use to access your classic infrastructure virtual server instance. For more information about adding an SSH key and uploading the key to IBM Cloud, see [Adding an SSH key](https://cloud.ibm.com/docs/infrastructure/ssh-keys?topic=ssh-keys-adding-an-ssh-key).
 
 You can also choose to customize the default settings for your classic infrastructure virtual server instance:
